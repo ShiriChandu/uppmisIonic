@@ -1,0 +1,7 @@
+{
+  "name": "UPPMISIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

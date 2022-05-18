@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "UPPMISIonic",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
