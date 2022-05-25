@@ -1,20 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title >Login </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="bg" >
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+
+
+
+    <ion-list class="bg">
+
+      <ion-text color="primary">
+        <h3 align="center">TPI UP SWSM - JJM Project</h3>
+      </ion-text>
+
+      <ion-img src="assets/icon/water.png" class="img3"></ion-img>
+
+      <ion-item class="input">
+        <!-- <ion-label position="stacked">UserName:</ion-label> -->
+        <ion-input type="text" placeholder="   UserName" name="username" [(ngModel)]="postData.employeeid" >
+          <ion-icon slot="start" name="person" color="dark"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="input">
+        <!-- <ion-label position="stacked">Password:</ion-label> -->
+        <ion-input type="Password" placeholder="   Password" name="password" [(ngModel)]="postData.epassword" >
+          <ion-icon slot="start" name="eye-off" color="dark"></ion-icon>
+
+        </ion-input>
+      </ion-item>
+      <ion-button (click)="callloginservice()" expand="block"
+      class="center"style="text-transform:none"> Login</ion-button>
+
+
+    </ion-list>
+
 </ion-content>

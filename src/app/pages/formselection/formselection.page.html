@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="white-space: pre-wrap !important;">Work Selection</ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+
+
+<ion-grid fixed>
+
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Work</strong><span class="required-asterisk">*</span></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+
+
+            <ion-select interface="popover" placeholder="Select Work" (ionChange)="workchange($event)">
+              <ion-select-option  *ngFor="let work of worklist" [value]="work">
+                {{work.work_name}}</ion-select-option>
+            </ion-select>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Form</strong><span class="required-asterisk">*</span></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+
+
+            <ion-select  style="white-space: pre-wrap !important;" interface="popover" placeholder="Select Form" (ionChange)="formchange($event)">
+              <ion-select-option class="alert-radio-label.sc-ion-alert-md" value="Slit Content">Slit Content</ion-select-option>
+              <ion-select-option value="Slump Test">Slump Test</ion-select-option>
+              <ion-select-option  value="CC-Cube test for 28 days">CC-Cube test for 28 days</ion-select-option>
+              <ion-select-option value="Seive analysis-concrete">Seive analysis-concrete</ion-select-option>
+              <ion-select-option class="alert-radio-label.sc-ion-alert-md"  value="Coarse Aggrigate - Single size">Coarse Aggrigate - Single size</ion-select-option>
+              <ion-select-option value="Coarse Aggrigate - Graded(40mm)">Coarse Aggrigate - Graded(40mm)</ion-select-option>
+              <ion-select-option value="Coarse Aggrigate - Graded(20mm)">Coarse Aggrigate - Graded(20mm)</ion-select-option>
+
+              <ion-select-option value="Coarse Aggrigate - Graded(12.5mm)">Coarse Aggrigate - Graded(12.5mm)</ion-select-option>
+              <ion-select-option value="Steel Unit Weight test">Steel Unit Weight test</ion-select-option>
+              <ion-select-option value="Water Absorption Bricks">Water Absorption Bricks</ion-select-option>
+              <ion-select-option value="CC-Cube test for 7 days">CC-Cube test for 7 days</ion-select-option>
+            </ion-select>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button style="text-transform: none;"
+(click)="move()" expand="block"  >
+Next          </ion-button>
+        </ion-col>
+      </ion-row>
+
+
+      </ion-grid>
+      </ion-list>
+
+</ion-content>

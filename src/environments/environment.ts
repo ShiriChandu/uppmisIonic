@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+
+ apiUrl: 'http://202.62.69.3:7071/uppms_services_testing/'
 };
 
 /*

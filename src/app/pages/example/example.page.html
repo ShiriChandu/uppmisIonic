@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>example</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-row>
+    <ion-col size="12">
+      <ion-img src="image"></ion-img>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+
+      <ion-button (click)="takePhoto()" expand="block" fill="clear" shape="round">
+        Click me
+      </ion-button>
+      <canvas #canvas   (touchstart)="handleStart($event)" (touchmove)="handleMove($event)">
+        </canvas>
+
+
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-list>
+
+</ion-content>

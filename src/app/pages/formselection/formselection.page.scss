@@ -1,0 +1,75 @@
+
+
+  .label{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+
+  }
+  .padding{
+      margin: 2px;
+    --border-width: 0;
+    --inner-border-width: 0;
+  }
+  .padding1{
+    margin: 2px;
+
+    --border-width: 0;
+  --inner-border-width: 0;
+}
+  .input{
+    margin: 2px;
+    border: 2px solid;
+    border-radius: 4px;
+
+    border-color:  #3880ff;
+    --border-width: 0;
+    --inner-border-width: 0;
+
+
+  }
+  .card {
+    border: 3px solid #0093d2
+  }
+  .img2{
+    width: 50% !important;
+    height: 50% !important;
+   }
+  .button{
+      margin: 5px;
+  }
+  .required-asterisk{
+    color: red;
+    font-weight: bold;
+    margin-left: 3px;
+    font-size: 1.2em;
+}
+.ion {
+  height: auto;
+  contain: content;
+}
+// .alert-radio-label.sc-ion-alert-md {
+//   white-space: pre-line !important;
+// }
+
+.alert-radio-label.sc-ion-alert-md {
+  padding-left: 52px;
+  padding-right: 26px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  flex: 1;
+  color: var(--ion-color-step-850, #262626);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+}
+
+
+.alert-radio-label.sc-ion-alert-ios {
+  white-space: pre-line !important;
+}
+
+
+

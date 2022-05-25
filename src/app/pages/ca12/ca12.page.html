@@ -1,0 +1,604 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/formselection"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="white-space: pre-wrap !important;">  Coarse Aggregate - Sieve Analysis Graded(12.5mm)
+    </ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-img src="assets/icon/rv.png" class="img3"></ion-img>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Qc Report No </strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{qcreportno}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label> <strong>Name of the Cluster	</strong>  </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{clusterName}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Name of the District	</strong> </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{districtName}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Name of the Agency/Contractor	</strong> </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{agencyName}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Name of the Scheme	</strong> </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{schemeName}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Agreement Number	</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{agrementNo}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label><strong>Value of the contract	</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{valOfContract}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label>Date of Testing</ion-label>
+            <ion-input value="{{ date4 | date: 'dd-MM-yyyy' }}" id="date4" >
+            </ion-input>
+            <ion-popover trigger="date4" size="cover">
+              <ng-template>
+                <ion-datetime presentation="datesda4" [(ngModel)]="date4"></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Material Source	</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" cass="input" [(ngModel)]="materialSource"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Stage of work</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Size of Material			</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" cass="input" [(ngModel)]="sizeofMaterial"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Weight of Sample				</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+          <ion-label>{{weightOfSample}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Sieve Size	</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Weight Retained (grms)	</strong></ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;">20mm	</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+          <ion-input type="number" [(ngModel)]="weight1"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;">12.5mm	</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+          <ion-input type="number" [(ngModel)]="weight2" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;">10mm		</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+          <ion-input type="number" [(ngModel)]="weight3" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;">4.75mm	</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+          <ion-input type="number" [(ngModel)]="weight4" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Cumulative Weight retained in grms	</strong>	</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Cum % weight Retained		</strong>	</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>% Passing	</strong>	</ion-label>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item class="input">
+           <ion-input type="number" [(ngModel)]="cumwt1" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-input type="number" [(ngModel)]="retainwt1" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-input type="number" [(ngModel)]="paasing1" (ionChange)="cumweightListioner()"></ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{cumwt2}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{retainwt2}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{paasing2}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{cumwt3}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{retainwt3}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{paasing3}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{cumwt4}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{retainwt4}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item class="input">
+            <ion-label>{{paasing4}}</ion-label>
+
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+
+
+
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label><strong>Specifications % Passing (SINGLE SIZE) </strong></ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label><strong>12.5mm </strong></ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label style="white-space: pre-wrap !important;">100</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label style="white-space: pre-wrap !important;">90-100</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label style="white-space: pre-wrap !important;">40-85</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label style="white-space: pre-wrap !important;">0-10</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="padding">
+            <ion-label><strong >Remarks </strong></ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-label>{{remarks}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>  Photograph1:</strong><span class="required-asterisk">*</span></ion-label>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col size="4">
+
+
+
+          <img id="multiple" #previewimage>
+
+
+
+
+        </ion-col>
+
+        <ion-col size="2">
+
+          <ion-button title="camera" (click)="locationcheck()">
+            <ion-icon  name="camera" ></ion-icon>
+            </ion-button>
+        </ion-col>
+
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>  Photograph2:</strong></ion-label>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col size="4">
+
+
+
+          <img id="multiple2" #previewimage2>
+
+
+
+
+        </ion-col>
+
+        <ion-col size="1">
+
+          <ion-button title="camera" (click)="locationcheck2()">
+            <ion-icon  name="camera" ></ion-icon>
+            </ion-button>
+        </ion-col>
+
+
+      </ion-row>
+
+
+      <ion-row >
+        <ion-col size="10">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>Employee Signature:</strong><span class="required-asterisk">*</span></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon  name="create"  (click)="clear1()"></ion-icon>
+
+        </ion-col>
+
+
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="padding">
+          <div>
+            <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+         </div>
+
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row >
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>Contractor Name:</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" [(ngModel)]="contractorName" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row >
+        <ion-col size="10">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>Contractor Signature:</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon  name="create"  (click)="clear2()"></ion-icon>
+
+        </ion-col>
+
+
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="padding">
+          <div>
+            <canvas #canvas1 (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+         </div>
+
+        </ion-col>
+
+      </ion-row>
+
+
+      <ion-row >
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>UPJN Name:</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" [(ngModel)]="upjnName" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row >
+        <ion-col size="10">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>UPJN Signature:</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="2">
+          <ion-icon  name="create"  (click)="clear3()"></ion-icon>
+
+        </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="padding">
+            <div>
+              <canvas #canvas2 (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+           </div>
+
+          </ion-col>
+
+
+
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-button style="text-transform: none;" (click)="submit()" expand="block" >Submit            </ion-button>
+          </ion-col>
+
+<ion-col size="6">
+  <ion-button style="text-transform: none;" (click)="cancel()" expand="block" >Cancel            </ion-button>
+</ion-col>
+</ion-row>
+
+    </ion-grid>
+  </ion-list>
+
+</ion-content>
