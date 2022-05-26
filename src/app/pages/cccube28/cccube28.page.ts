@@ -509,6 +509,7 @@ this.setViews();
 
         j11 = (h11+h12+h12)/3;
         if(j11 !== NaN){
+          this.avgStrength = j11;
           if(j11 >=25){
             this.remarks = 'The tested sample is confirming to IS: 456 2000'
           }else{
@@ -540,10 +541,23 @@ this.setViews();
 
         const date1 = this.castdate1.substring(8, 10);
         const date2 = this.casttest1.substring(8, 10);
-        const diff = date1 - date2;
+        if(date2> date1){
+        const diff = date2 - date1;
         if(diff !==  NaN){
-        this.age1 = diff + 1;
+
+          this.age1 = diff;
         console.log('days', this.age1);
+
+        }
+        }else{
+          const diff = date1 - date2;
+          if(diff !==  NaN){
+
+            this.age1 = diff;
+          console.log('days', this.age1);
+
+          }
+
         }
 
 
@@ -555,10 +569,20 @@ this.setViews();
 
         const date1 = this.castdate2.substring(8, 10);
         const date2 = this.casttest2.substring(8, 10);
-        const diff = date1 - date2;
-        if(diff !==  NaN){
-        this.age2 = diff + 1;
-        console.log('days2', this.age2);
+        if(date2> date1){
+          const diff = date2 - date1;
+          if(diff !==  NaN){
+          this.age2 = diff ;
+          console.log('days2', this.age2);
+          }
+
+        }else{
+          const diff = date1 - date2;
+          if(diff !==  NaN){
+          this.age2 = diff ;
+          console.log('days2', this.age2);
+          }
+
         }
 
 
@@ -570,11 +594,22 @@ this.setViews();
 
         const date1 = this.castdate3.substring(8, 10);
         const date2 = this.casttest3.substring(8, 10);
-        const diff = date1 - date2;
-        if(diff !==  NaN){
-        this.age3 = diff + 1;
-        console.log('days3', this.age3);
+        if(date2> date1){
+          const diff = date2 - date1;
+          if(diff !==  NaN){
+          this.age3 = diff ;
+          console.log('days3', this.age3);
+          }
+
+        }else{
+          const diff = date1 - date2;
+          if(diff !==  NaN){
+          this.age3 = diff ;
+          console.log('days3', this.age3);
+          }
+
         }
+
 
 
       }

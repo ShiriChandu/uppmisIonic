@@ -138,7 +138,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()"></ion-input>
+            <ion-input type="number"  [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -152,7 +152,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" class="input" [(ngModel)]="volumofcube"></ion-input>
+            <ion-input type="text"  [(ngModel)]="volumofcube"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -165,7 +165,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" class="input" [(ngModel)]="stagework"></ion-input>
+            <ion-input type="text"  [(ngModel)]="stagework"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -178,7 +178,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" ></ion-input>
+            <ion-input type="number"  [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" ></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -192,7 +192,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="noofsamples"></ion-input>
+            <ion-input [(ngModel)]="noofsamples"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -318,7 +318,7 @@
             </ion-input>
             <ion-popover trigger="casttest3" size="cover">
               <ng-template>
-                <ion-datetime presentation="datetest3" [(ngModel)]="casttest3"></ion-datetime>
+                <ion-datetime presentation="datetest3" [(ngModel)]="casttest3" (ngModelChange)="datesListioners()"></ion-datetime>
               </ng-template>
             </ion-popover>
           </ion-item>

@@ -72,7 +72,7 @@ export class DashboardPage implements OnInit {
           if(response.error === false){
             console.log('response',response);
             Constants.schemedetailsList = response.data;
-            this.router.navigate(['example']);
+            this.router.navigate(['formselection']);
 
           }
         });

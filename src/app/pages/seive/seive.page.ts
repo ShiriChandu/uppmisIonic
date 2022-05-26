@@ -73,7 +73,7 @@ export class SeivePage implements AfterViewInit  {
   originalImage2pic: any;
   dates: any;
   materialSource: any;
-  weightOfSample = 5000;
+  weightOfSample = 1000;
   weight1: any;
   weight2: any;
   weight3: any;
