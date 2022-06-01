@@ -138,7 +138,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()"></ion-input>
+            <ion-input type="number" [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -152,7 +152,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" class="input" [(ngModel)]="volumofcube"></ion-input>
+            <ion-input type="text"  [(ngModel)]="volumofcube"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -165,7 +165,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" class="input" [(ngModel)]="stagework"></ion-input>
+            <ion-input type="text"  [(ngModel)]="stagework"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -178,7 +178,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" ></ion-input>
+            <ion-input type="number"  [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" ></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -192,7 +192,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" class="input" [(ngModel)]="noofsamples"></ion-input>
+            <ion-input type="number"  [(ngModel)]="noofsamples"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -240,14 +240,10 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
+            <ion-label>{{casttest1}}</ion-label>
 
-            <ion-input value="{{ casttest1 | date: 'dd-MM-yyyy' }}" id="casttest1" >
-            </ion-input>
-            <ion-popover trigger="casttest1" size="cover">
-              <ng-template>
-                <ion-datetime presentation="datetest" [(ngModel)]="casttest1" (ngModelChange)="datesListioners()"></ion-datetime>
-              </ng-template>
-            </ion-popover>
+
+
           </ion-item>
 
         </ion-col>
@@ -278,13 +274,7 @@
         <ion-col size="5">
           <ion-item class="input">
 
-            <ion-input value="{{ casttest2 | date: 'dd-MM-yyyy' }}" id="casttest2" >
-            </ion-input>
-            <ion-popover trigger="casttest2" size="cover">
-              <ng-template>
-                <ion-datetime presentation="datetest2" [(ngModel)]="casttest2" (ngModelChange)="datesListioners()"></ion-datetime>
-              </ng-template>
-            </ion-popover>
+            <ion-label>{{casttest2}}</ion-label>
           </ion-item>
 
         </ion-col>
@@ -305,7 +295,7 @@
             </ion-input>
             <ion-popover trigger="castdate3" size="cover">
               <ng-template>
-                <ion-datetime presentation="datecast3" [(ngModel)]="castdate3" (ngModelChange)="datesListioners()"></ion-datetime>
+                <ion-datetime presentation="datecast3" [(ngModel)]="castdate3" (ionChange)="datesListioners()"></ion-datetime>
               </ng-template>
             </ion-popover>
           </ion-item>
@@ -314,13 +304,8 @@
         <ion-col size="5">
           <ion-item class="input">
 
-            <ion-input value="{{ casttest3 | date: 'dd-MM-yyyy' }}" id="casttest3" (ngModelChange)="datesListioners()" >
-            </ion-input>
-            <ion-popover trigger="casttest3" size="cover">
-              <ng-template>
-                <ion-datetime presentation="datetest3" [(ngModel)]="casttest3"></ion-datetime>
-              </ng-template>
-            </ion-popover>
+            <ion-label>{{casttest3}}</ion-label>
+
           </ion-item>
 
         </ion-col>
@@ -689,7 +674,7 @@
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
-            <ion-label  style="white-space: pre-wrap !important;"><strong>  Photograph1:</strong><span class="required-asterisk">*</span></ion-label>
+            <ion-label  style="white-space: pre-wrap !important;"><strong>  Photograph1:</strong></ion-label>
           </ion-item>
 
         </ion-col>
@@ -748,7 +733,7 @@
       <ion-row >
         <ion-col size="10">
           <ion-item class="padding">
-            <ion-label  style="white-space: pre-wrap !important;"><strong>Employee Signature:</strong><span class="required-asterisk">*</span></ion-label>
+            <ion-label  style="white-space: pre-wrap !important;"><strong>Employee Signature:</strong></ion-label>
           </ion-item>
         </ion-col>
         <ion-col size="2">

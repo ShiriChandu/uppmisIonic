@@ -354,11 +354,11 @@ this.setViews();
 
 
       watermark([this.blobImage])
-      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '20px Josefin Slab', '#FC0535', 0.5))
+      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '10px bold', '#FF0000', 0))
       .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '10px bold', '#FF0000', 0, 48))
     .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '10px bold', '#FF0000', 0, 48))
 
 
     .then((img)=> {
@@ -375,11 +375,11 @@ this.setViews();
 
 
       watermark([this.blobImagepic2])
-      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '20px Josefin Slab', '#FC0535', 0.5))
+      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '10px bold', '#FF0000', 0))
       .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '10px bold', '#FF0000', 0, 48))
     .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '10px bold', '#FF0000', 0, 48))
 
 
     .then((img)=> {
@@ -396,13 +396,13 @@ this.setViews();
       return 28;
     };
     y63(coffee, metrics, context) {
-      return 143;
+      return 63;
     };
     y83(coffee, metrics, context) {
-      return 163;
+      return 73;
     };
     y103(coffee, metrics, context) {
-      return 183;
+      return 83;
     };
     clear1() {
       this.signaturePad.clear();
@@ -516,6 +516,7 @@ this.setViews();
 
         j11 = (h11+h12+h12)/3;
         if(j11 !== NaN){
+          this.avgStrength = j11;
           if(j11 >=25){
             this.remarks = 'The rate of gain of strength of the cube is Satisfactory as per IS: 456 2000'
           }else{
@@ -560,49 +561,29 @@ this.setViews();
 
     }
     datesListioners(){
-      if(this.castdate1 !== undefined && this.castdate1 !== null && this.castdate1 !== '' &&
-      this.casttest1 !== undefined && this.casttest1 !== null && this.casttest1 !== ''){
-
-
-        const date1 = this.castdate1.substring(8, 10);
-        const date2 = this.casttest1.substring(8, 10);
-        const diff = date1 - date2;
-        if(diff !==  NaN){
-        this.age1 = diff + 1;
-        console.log('days', this.age1);
-        }
-
+      if(this.castdate1 !== undefined && this.castdate1 !== null && this.castdate1 !== '' ){
+        var tempDate = new Date(this.castdate1);
+        tempDate.setDate(tempDate.getDate() +  7)
+        console.log('datess', tempDate.toLocaleString());
+        this.casttest1 = tempDate.toLocaleString();
+        this.age1 = 7
 
       }
 
-      if(this.castdate2 !== undefined && this.castdate2 !== null && this.castdate2 !== '' &&
-      this.casttest2 !== undefined && this.casttest2 !== null && this.casttest2 !== ''){
-
-
-        const date1 = this.castdate2.substring(8, 10);
-        const date2 = this.casttest2.substring(8, 10);
-        const diff = date1 - date2;
-        if(diff !==  NaN){
-        this.age2 = diff + 1;
-        console.log('days2', this.age2);
-        }
-
-
+      if(this.castdate2 !== undefined && this.castdate2 !== null && this.castdate2 !== ''){
+        var tempDate = new Date(this.castdate2);
+        tempDate.setDate(tempDate.getDate() +  7)
+        console.log('datess', tempDate.toLocaleString());
+        this.casttest2 = tempDate.toLocaleString();
+        this.age2 = 7
       }
 
-      if(this.castdate3 !== undefined && this.castdate3 !== null && this.castdate3 !== '' &&
-      this.casttest3 !== undefined && this.casttest3 !== null && this.casttest3 !== ''){
-
-
-        const date1 = this.castdate3.substring(8, 10);
-        const date2 = this.casttest3.substring(8, 10);
-        const diff = date1 - date2;
-        if(diff !==  NaN){
-        this.age3 = diff + 1;
-        console.log('days3', this.age3);
-        }
-
-
+      if(this.castdate3 !== undefined && this.castdate3 !== null && this.castdate3 !== ''){
+        var tempDate = new Date(this.castdate3);
+        tempDate.setDate(tempDate.getDate() +  7)
+        console.log('datess', tempDate.toLocaleString());
+        this.casttest3 = tempDate.toLocaleString();
+        this.age3 = 7
       }
 
 

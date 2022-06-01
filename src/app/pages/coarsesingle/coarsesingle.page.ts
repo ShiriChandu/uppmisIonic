@@ -346,11 +346,11 @@ this.setViews();
 
 
       watermark([this.blobImage])
-      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '20px Josefin Slab', '#FC0535', 0.5))
+      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '10px bold', '#FF0000', 0))
       .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '10px bold', '#FF0000', 0, 48))
     .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '10px bold', '#FF0000', 0, 48))
 
 
     .then((img)=> {
@@ -367,11 +367,11 @@ this.setViews();
 
 
       watermark([this.blobImagepic2])
-      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '20px Josefin Slab', '#FC0535', 0.5))
+      .image(watermark.text.atPos(this.xy78,this.y63,'Latitude: '+this.latitude, '10px bold', '#FF0000', 0))
       .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y83,'Longitude: '+this.longitude, '10px bold', '#FF0000', 0, 48))
     .load('assets/icon/rv.png')
-    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '20px Josefin Slab', '#FC0535', 0.5, 48))
+    .image(watermark.text.atPos(this.xy78,this.y103,'Date: '+this.joindate, '10px bold', '#FF0000', 0, 48))
 
 
     .then((img)=> {
@@ -388,14 +388,15 @@ this.setViews();
       return 28;
     };
     y63(coffee, metrics, context) {
-      return 143;
+      return 63;
     };
     y83(coffee, metrics, context) {
-      return 163;
+      return 73;
     };
     y103(coffee, metrics, context) {
-      return 183;
+      return 83;
     };
+
     clear1() {
       this.signaturePad.clear();
     }
