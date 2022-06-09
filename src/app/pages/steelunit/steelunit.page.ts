@@ -5,7 +5,7 @@ import { HttpcallsserviceService } from './../../services/httpcallsservice.servi
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable use-isnan */
 /* eslint-disable no-var */
-import { AlertController, Platform } from '@ionic/angular';
+import { AlertController, Platform, LoadingController } from '@ionic/angular';
 import { ToastserviceService } from './../../services/toastservice.service';
 import { Constants } from 'src/app/common/constants';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -101,7 +101,8 @@ export class SteelunitPage implements AfterViewInit  {
     public camera: Camera,
     private platform: Platform,
     private httpSer: HttpcallsserviceService,
-    private router: Router
+    private router: Router,
+    private loadingController: LoadingController
     ) {
 this.setViews();
    }
@@ -441,9 +442,9 @@ this.setViews();
         if(f13!== NaN){
           this.diff2 = f13;
           if(f13 > -49.36){
-            this.observation1='The results for 10 mm Dia of Steel confirming to specifications of IS 1786-2008'
+            this.observation2='The results for 10 mm Dia of Steel confirming to specifications of IS 1786-2008'
           }else{
-            this.observation1 = 'The results for 10 mm Dia of Steel not confirming to specifications of IS 1786-2008'
+            this.observation2 = 'The results for 10 mm Dia of Steel not confirming to specifications of IS 1786-2008'
           }
         }
 
@@ -459,9 +460,9 @@ this.setViews();
         if(f14!== NaN){
           this.diff3 = f14;
           if(f14 > -53.28){
-            this.observation1='The results for 12 mm Dia of Steel confirming to specifications of IS 1786-2008'
+            this.observation3='The results for 12 mm Dia of Steel confirming to specifications of IS 1786-2008'
           }else{
-            this.observation1 = 'The results for 12 mm Dia of Steel not confirming to specifications of IS 1786-2008'
+            this.observation3 = 'The results for 12 mm Dia of Steel not confirming to specifications of IS 1786-2008'
           }
         }
 
@@ -476,9 +477,9 @@ this.setViews();
         if(f15!== NaN){
           this.diff4 = f15;
           if(f15 > -94.80){
-            this.observation1='The results for 16 mm Dia of Steel confirming to specifications of IS 1786-2008'
+            this.observation4='The results for 16 mm Dia of Steel confirming to specifications of IS 1786-2008'
           }else{
-            this.observation1 = 'The results for 16 mm Dia of Steel not confirming to specifications of IS 1786-2008'
+            this.observation4 = 'The results for 16 mm Dia of Steel not confirming to specifications of IS 1786-2008'
           }
         }
 
@@ -494,9 +495,9 @@ this.setViews();
         if(f16!== NaN){
           this.diff5 = f16;
           if(f16 > -94.80){
-            this.observation1='The results for 20 mm Dia of Steel confirming to specifications of IS 1786-2008'
+            this.observation5='The results for 20 mm Dia of Steel confirming to specifications of IS 1786-2008'
           }else{
-            this.observation1 = 'The results for 20 mm Dia of Steel not confirming to specifications of IS 1786-2008'
+            this.observation5 = 'The results for 20 mm Dia of Steel not confirming to specifications of IS 1786-2008'
           }
         }
 
@@ -632,6 +633,7 @@ this.setViews();
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAAXNSR0IArs4c6QAABGJJREFUeF7t1AEJAAAMAsHZv/RyPNwSyDncOQIECEQEFskpJgECBM5geQICBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAgQdWMQCX4yW9owAAAABJRU5ErkJggg==' ) {
     this.toastSer.presentError('please Enter the UPJN Signature' );
    }else{
+     this.autoLoader();
      this.callService();
    }
     }
@@ -647,7 +649,7 @@ this.setViews();
          }else{
           this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.date3,this.gradeOfSteel,this.stageOfwork,
             395,617,888,1580,2470,this.weight1,this.weight2,this.weight3,this.weight4,this.weight5,
-            this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.remarks1,this.remarks2,this.remarks3,this.remarks4,this.remarks5,
+            this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.observation1,this.observation2,this.observation3,this.observation4,this.observation5,
             this.waterMarkImage.nativeElement.src,
             this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
             this.signaturePad1.toDataURL(),this.upjnName,this.signaturePad2.toDataURL()).subscribe((response: any)=>{
@@ -665,7 +667,7 @@ this.setViews();
         }else{
           this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.date3,this.gradeOfSteel,this.stageOfwork,
             395,617,888,1580,2470,this.weight1,this.weight2,this.weight3,this.weight4,this.weight5,
-            this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.remarks1,this.remarks2,this.remarks3,this.remarks4,this.remarks5,
+            this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.observation1,this.observation2,this.observation3,this.observation4,this.observation5,
             this.waterMarkImage.nativeElement.src,
             this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
             this.signaturePad1.toDataURL(),this.upjnName,this.signaturePad2.toDataURL()).subscribe((response: any)=>{
@@ -682,6 +684,18 @@ this.setViews();
         }
       });
 
+    }
+    autoLoader() {
+      this.loadingController.create({
+        spinner:'lines',
+        message: 'Uploading Data. Please do not close or click back button ',
+        duration: 20000
+      }).then((response) => {
+        response.present();
+        response.onDidDismiss().then((response1) => {
+          console.log('Loader dismissed', response);
+        });
+      });
     }
 }
 

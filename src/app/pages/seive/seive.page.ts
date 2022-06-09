@@ -5,7 +5,7 @@ import { HttpcallsserviceService } from './../../services/httpcallsservice.servi
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable use-isnan */
 /* eslint-disable no-var */
-import { AlertController, Platform } from '@ionic/angular';
+import { AlertController, LoadingController, Platform } from '@ionic/angular';
 import { ToastserviceService } from './../../services/toastservice.service';
 import { Constants } from 'src/app/common/constants';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -118,7 +118,8 @@ export class SeivePage implements AfterViewInit  {
     public camera: Camera,
     private platform: Platform,
     private httpSer: HttpcallsserviceService,
-    private router: Router
+    private router: Router,
+    private loadingController: LoadingController
     ) {
 this.setViews();
    }
@@ -803,6 +804,7 @@ let f19;
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAAXNSR0IArs4c6QAABGJJREFUeF7t1AEJAAAMAsHZv/RyPNwSyDncOQIECEQEFskpJgECBM5geQICBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAgQdWMQCX4yW9owAAAABJRU5ErkJggg==' ) {
     this.toastSer.presentError('please Enter the UPJN Signature' );
    }else{
+     this.autoLoader();
      this.callService();
    }
     }
@@ -825,6 +827,7 @@ let f19;
             this.weight6,this.cumwt6,this.retainwt6,this.paasing6,
             this.weight7,this.cumwt7,this.retainwt7,this.paasing7,
             this.weight8,this.cumwt8,this.retainwt8,this.paasing8,
+            this.total,this.moduls,
 
             this.remarks,this.waterMarkImage.nativeElement.src,
             this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
@@ -850,6 +853,7 @@ let f19;
             this.weight6,this.cumwt6,this.retainwt6,this.paasing6,
             this.weight7,this.cumwt7,this.retainwt7,this.paasing7,
             this.weight8,this.cumwt8,this.retainwt8,this.paasing8,
+            this.total,this.moduls,
 
             this.remarks,this.waterMarkImage.nativeElement.src,
             this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
@@ -868,6 +872,20 @@ let f19;
       });
 
     }
+
+    autoLoader() {
+      this.loadingController.create({
+        spinner:'lines',
+        message: 'Uploading Data. Please do not close or click back button ',
+        duration: 20000
+      }).then((response) => {
+        response.present();
+        response.onDidDismiss().then((response1) => {
+          console.log('Loader dismissed', response);
+        });
+      });
+    }
+
 }
 
 

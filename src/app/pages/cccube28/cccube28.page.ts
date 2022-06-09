@@ -5,7 +5,7 @@ import { HttpcallsserviceService } from './../../services/httpcallsservice.servi
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable use-isnan */
 /* eslint-disable no-var */
-import { AlertController, Platform } from '@ionic/angular';
+import { AlertController, Platform, LoadingController } from '@ionic/angular';
 import { ToastserviceService } from './../../services/toastservice.service';
 import { Constants } from 'src/app/common/constants';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
@@ -57,7 +57,6 @@ export class Cccube28Page implements AfterViewInit {
   detailsList: any = [];
   date3: any;
   joindate: any;
-  stageOfwork: any;
   remarks: any;
   latitude: any;
   longitude: any;
@@ -113,7 +112,8 @@ export class Cccube28Page implements AfterViewInit {
     public camera: Camera,
     private platform: Platform,
     private httpSer: HttpcallsserviceService,
-    private router: Router
+    private router: Router,
+    private loadingController: LoadingController
     ) {
 this.setViews();
    }
@@ -633,11 +633,11 @@ this.setViews();
         this.toastSer.presentError('Please Enter Grade of Concrete				')
       }else if(this.gradeOfConcrete === ''){
         this.toastSer.presentError('Please Enter Grade of Concrete				')
-      }else if(this.stageOfwork === undefined){
+      }else if(this.stagework === undefined){
         this.toastSer.presentError('Please Enter Stage of work		')
-      }else if(this.stageOfwork === null){
+      }else if(this.stagework === null){
         this.toastSer.presentError('Please Enter Stage of work		')
-      }else if(this.stageOfwork === ''){
+      }else if(this.stagework === ''){
         this.toastSer.presentError('Please Enter Stage of work		')
       }else if(this.quantityOfConcrete === undefined){
         this.toastSer.presentError('Please Enter Quantity of concrete laid in m		')
@@ -750,6 +750,7 @@ this.setViews();
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAAXNSR0IArs4c6QAABGJJREFUeF7t1AEJAAAMAsHZv/RyPNwSyDncOQIECEQEFskpJgECBM5geQICBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAgQdWMQCX4yW9owAAAABJRU5ErkJggg==' ) {
     this.toastSer.presentError('please Enter the UPJN Signature' );
    }else{
+     this.autoLoader();
      this.callService();
    }
     }
@@ -764,11 +765,12 @@ this.setViews();
             this.toastSer.presentError('Please check your internet connection');
          }else{
             this.httpSer.addCC_Cube_28Test(Constants.workId,Constants.empid,this.department,this.quantityOfConcrete,
-              this.gradeOfConcrete,this.stageOfwork,
+              this.gradeOfConcrete,this.stagework,
               this.castdate1,this.casttest1,this.age1,this.density1,this.load1,this.strength1,this.avgStrength,this.charstr1,this.smplacce1,
               this.castdate2,this.casttest2,this.age2,this.density2,this.load2,this.strength2,this.charstr2,this.smplacce2,
               this.castdate3,this.casttest3,this.age3,this.density3,this.load3,this.strength3,this.charstr3,this.smplacce3,
-              this.remarks,this.waterMarkImage.nativeElement.src,
+              this.remarks,this.weight1,this.weight2,this.weight3,
+              this.waterMarkImage.nativeElement.src,
               this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
               this.signaturePad1.toDataURL(),this.upjnName,this.signaturePad2.toDataURL()).subscribe((response: any)=>{
 
@@ -785,11 +787,12 @@ this.setViews();
 
         }else{
           this.httpSer.addCC_Cube_28Test(Constants.workId,Constants.empid,this.department,this.quantityOfConcrete,
-            this.gradeOfConcrete,this.stageOfwork,
+            this.gradeOfConcrete,this.stagework,
             this.castdate1,this.casttest1,this.age1,this.density1,this.load1,this.strength1,this.avgStrength,this.charstr1,this.smplacce1,
             this.castdate2,this.casttest2,this.age2,this.density2,this.load2,this.strength2,this.charstr2,this.smplacce2,
             this.castdate3,this.casttest3,this.age3,this.density3,this.load3,this.strength3,this.charstr3,this.smplacce3,
-            this.remarks,this.waterMarkImage.nativeElement.src,
+            this.remarks,this.weight1,this.weight2,this.weight3,
+            this.waterMarkImage.nativeElement.src,
             this.waterMarkImage2.nativeElement.src,this.signaturePad.toDataURL(),this.contractorName,
             this.signaturePad1.toDataURL(),this.upjnName,this.signaturePad2.toDataURL()).subscribe((response: any)=>{
 
@@ -806,6 +809,19 @@ this.setViews();
         }
       });
 
+    }
+
+    autoLoader() {
+      this.loadingController.create({
+        spinner:'lines',
+        message: 'Uploading Data. Please do not close or click back button ',
+        duration: 20000
+      }).then((response) => {
+        response.present();
+        response.onDidDismiss().then((response1) => {
+          console.log('Loader dismissed', response);
+        });
+      });
     }
 
 }

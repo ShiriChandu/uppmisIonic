@@ -436,7 +436,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-            <ion-label style="white-space: pre-wrap !important;">{{density1}}</ion-label>
+            <ion-label style="white-space: pre-wrap !important;">{{density1 | number: '1.2-2'}}</ion-label>
           </ion-item>
 
         </ion-col>
@@ -458,7 +458,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-            <ion-label style="white-space: pre-wrap !important;">{{density2}}</ion-label>
+            <ion-label style="white-space: pre-wrap !important;">{{density2 | number: '1.2-2'}}</ion-label>
           </ion-item>
 
         </ion-col>
@@ -480,7 +480,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-            <ion-label style="white-space: pre-wrap !important;">{{density3}}</ion-label>
+            <ion-label style="white-space: pre-wrap !important;">{{density3 | number: '1.2-2'}}</ion-label>
           </ion-item>
 
         </ion-col>
@@ -509,18 +509,18 @@
 <ion-row>
   <ion-col size="4">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{strength1}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{strength1 | number: '1.2-2'}}</ion-label>
     </ion-item>
   </ion-col>
   <ion-col size="4">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{strength2}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{strength2 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
   <ion-col size="4">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{strength3}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{strength3 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
@@ -537,7 +537,8 @@
   </ion-col>
   <ion-col size="6">
     <ion-item class="input">
-      <ion-input type="number" [(ngModel)]="avgStrength" ></ion-input>
+      <ion-label>{{avgStrength | number: '1.2-2'}}</ion-label>
+
     </ion-item>
 
   </ion-col>
@@ -579,16 +580,16 @@
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{charstr1}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{charstr1 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce1}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce1 | number: '1.2-2'}}</ion-label>
     </ion-item>
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce11}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce11 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
 
@@ -605,17 +606,17 @@
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{charstr2}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{charstr2 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce2}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce2 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce22}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce22 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
@@ -631,17 +632,17 @@
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{charstr3}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{charstr3 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
   <ion-col size="5">
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce3}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce3 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
     <ion-item class="input">
-      <ion-label style="white-space: pre-wrap !important;">{{smplacce33}}</ion-label>
+      <ion-label style="white-space: pre-wrap !important;">{{smplacce33 | number: '1.2-2'}}</ion-label>
     </ion-item>
 
   </ion-col>
