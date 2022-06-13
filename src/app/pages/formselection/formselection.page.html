@@ -29,7 +29,7 @@
           <ion-item class="input">
 
 
-            <ion-select interface="popover" placeholder="Select Work" (ionChange)="workchange($event)">
+            <ion-select interface="popover" placeholder="Select Work" (ionChange)="workchange($event)" value="{{workid}}">
               <ion-select-option  *ngFor="let work of worklist" [value]="work">
                 {{work.work_name}}</ion-select-option>
             </ion-select>
@@ -49,7 +49,7 @@
           <ion-item class="input">
 
 
-            <ion-select  style="white-space: pre-wrap !important;" interface="popover" placeholder="Select Form" (ionChange)="formchange($event)">
+            <ion-select  style="white-space: pre-wrap !important;" interface="popover" placeholder="Select Form" (ionChange)="formchange($event)" value="{{form}}">
               <ion-select-option class="alert-radio-label.sc-ion-alert-md" value="Slit Content">Slit Content</ion-select-option>
               <ion-select-option value="Slump Test">Slump Test</ion-select-option>
               <ion-select-option  value="CC-Cube test for 28 days">CC-Cube test for 28 days</ion-select-option>

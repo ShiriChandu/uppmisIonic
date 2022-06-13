@@ -55,7 +55,7 @@ export class CoarsesinglePage implements AfterViewInit  {
   agrementNo: any;
   valOfContract: any;
   detailsList: any = [];
-  date3: any;
+  dates: any;
   joindate: any;
   stageOfwork: any;
   remarks: any;
@@ -71,7 +71,6 @@ export class CoarsesinglePage implements AfterViewInit  {
   upjnName: any;
   originalImage: any;
   originalImage2pic: any;
-  dates: any;
   materialSource: any;
   sizeofMaterial: any;
   weightOfSample = 5000;
@@ -138,7 +137,7 @@ this.setViews();
      this.agrementNo = this.detailsList[0].agreement_no;
      this.valOfContract = this.detailsList[0].tender_value;
    }
-   this.date3 = new Date().toISOString();
+   this.dates = new Date().toISOString();
    this.joindate =new Date().toLocaleString();
 
   }
@@ -686,11 +685,11 @@ this.setViews();
     }
 
     submit(){
-      if(this.date3 === undefined){
+      if(this.dates === undefined){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === null){
+      }else if(this.dates === null){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === ''){
+      }else if(this.dates === ''){
         this.toastSer.presentError('Please Enter Date of testing	')
       }else if(this.materialSource === undefined){
         this.toastSer.presentError('Please Enter Material Source			')
@@ -826,7 +825,7 @@ this.setViews();
           if(window.navigator.connection.type === 'none'){
             this.toastSer.presentError('Please check your internet connection');
          }else{
-          this.httpSer.addCASingleSizeTest(Constants.workId,Constants.empid,this.date3,this.materialSource,this.sizeofMaterial,this.stageOfwork,
+          this.httpSer.addCASingleSizeTest(Constants.workId,Constants.empid,this.dates,this.materialSource,this.sizeofMaterial,this.stageOfwork,
             this.weight1,this.cumwt1,this.retainwt1,this.paasing1,
             this.weight2,this.cumwt2,this.retainwt2,this.paasing2,
             this.weight3,this.cumwt3,this.retainwt3,this.paasing3,
@@ -849,7 +848,7 @@ this.setViews();
           }
 
         }else{
-          this.httpSer.addCASingleSizeTest(Constants.workId,Constants.empid,this.date3,this.materialSource,this.sizeofMaterial,this.stageOfwork,
+          this.httpSer.addCASingleSizeTest(Constants.workId,Constants.empid,this.dates,this.materialSource,this.sizeofMaterial,this.stageOfwork,
             this.weight1,this.cumwt1,this.retainwt1,this.paasing1,
             this.weight2,this.cumwt2,this.retainwt2,this.paasing2,
             this.weight3,this.cumwt3,this.retainwt3,this.paasing3,

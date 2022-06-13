@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/formselection"></ion-back-button>
     </ion-buttons>
-    <ion-title style="white-space: pre-wrap !important;">Coarse Aggregate - Single size Sieve Analysis</ion-title>
+    <ion-label style="white-space: pre-wrap !important;">Coarse Aggregate - Single size Sieve Analysis</ion-label>
 
 
   </ion-toolbar>
@@ -22,19 +22,6 @@
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
-            <ion-label><strong>Qc Report No </strong></ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6">
-          <ion-item class="input">
-            <ion-label>{{qcreportno}}</ion-label>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6">
-          <ion-item class="padding">
             <ion-label> <strong>Name of the Cluster	</strong>  </ion-label>
           </ion-item>
         </ion-col>
@@ -44,6 +31,7 @@
           </ion-item>
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
@@ -56,6 +44,7 @@
           </ion-item>
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
@@ -68,6 +57,8 @@
           </ion-item>
         </ion-col>
       </ion-row>
+
+
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
@@ -80,6 +71,8 @@
           </ion-item>
         </ion-col>
       </ion-row>
+
+
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
@@ -109,15 +102,31 @@
       <ion-row>
 
         <ion-col size="12">
-          <ion-item class="input">
+          <ion-item class="padding">
             <ion-label>Date of Testing</ion-label>
+            </ion-item>
+            <ion-item class="input">
+
             <ion-input value="{{ dates | date: 'dd-MM-yyyy' }}" id="dates" >
             </ion-input>
-            <ion-popover trigger="dates" size="cover">
+            <ion-popover trigger="dates" size="cover" [dismissOnSelect]="true">
               <ng-template>
                 <ion-datetime presentation="datesda" [(ngModel)]="dates"></ion-datetime>
               </ng-template>
             </ion-popover>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label style="white-space: pre-wrap !important;"><strong>Material Source</strong></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-input type="text" cass="input" [(ngModel)]="materialSource" placeholder="Material Source"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -127,12 +136,12 @@
       <ion-row>
         <ion-col size="6">
           <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;"><strong>Material Source	</strong></ion-label>
+            <ion-label><strong>Qc Report No </strong></ion-label>
           </ion-item>
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="materialSource"></ion-input>
+            <ion-label>{{qcreportno}}</ion-label>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -146,7 +155,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork"></ion-input>
+            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork" placeholder="Stage of work"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -159,7 +168,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="sizeofMaterial"></ion-input>
+            <ion-input type="text" cass="input" [(ngModel)]="sizeofMaterial" placeholder=" Size of Material"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

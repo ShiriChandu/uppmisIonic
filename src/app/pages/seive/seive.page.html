@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/formselection"></ion-back-button>
     </ion-buttons>
-    <ion-title style="white-space: pre-wrap !important;"> Sieve Analysis</ion-title>
+    <ion-label style="white-space: pre-wrap !important;"> Sieve Analysis</ion-label>
 
 
   </ion-toolbar>
@@ -109,11 +109,14 @@
       <ion-row>
 
         <ion-col size="12">
-          <ion-item class="input">
+          <ion-item class="padding">
             <ion-label>Date of Testing</ion-label>
+           </ion-item>
+           <ion-item class="input">
+
             <ion-input value="{{ dates | date: 'dd-MM-yyyy' }}" id="dates" >
             </ion-input>
-            <ion-popover trigger="dates" size="cover">
+            <ion-popover trigger="dates" size="cover" [dismissOnSelect]="true">
               <ng-template>
                 <ion-datetime presentation="datesda" [(ngModel)]="dates"></ion-datetime>
               </ng-template>
@@ -132,7 +135,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="materialSource"></ion-input>
+            <ion-input type="text" cass="input" [(ngModel)]="materialSource" placeholder=" Material Source"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -146,7 +149,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork"></ion-input>
+            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork" placeholder=" Stage of work"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -597,7 +600,7 @@
       <ion-row>
         <ion-col size="3">
           <ion-item class="input">
-            <ion-label style="white-space: pre-wrap !important;">	30-70		</ion-label>
+            <ion-label style="white-space: pre-wrap !important;">30-70		</ion-label>
           </ion-item>
         </ion-col>
         <ion-col size="3">

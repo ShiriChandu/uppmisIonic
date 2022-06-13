@@ -55,7 +55,7 @@ export class SteelunitPage implements AfterViewInit  {
   agrementNo: any;
   valOfContract: any;
   detailsList: any = [];
-  date3: any;
+  dates: any;
   joindate: any;
   stageOfwork: any;
   remarks1: any;
@@ -76,7 +76,6 @@ export class SteelunitPage implements AfterViewInit  {
   upjnName: any;
   originalImage: any;
   originalImage2pic: any;
-  dates: any;
   gradeOfSteel: any;
   weight1: any;
   weight2: any;
@@ -128,7 +127,7 @@ this.setViews();
      this.agrementNo = this.detailsList[0].agreement_no;
      this.valOfContract = this.detailsList[0].tender_value;
    }
-   this.date3 = new Date().toISOString();
+   this.dates = new Date().toISOString();
    this.joindate =new Date().toLocaleString();
 
   }
@@ -508,18 +507,12 @@ this.setViews();
     }
 
     submit(){
-      if(this.date3 === undefined){
+      if(this.dates === undefined){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === null){
+      }else if(this.dates === null){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === ''){
+      }else if(this.dates === ''){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.gradeOfSteel === undefined){
-        this.toastSer.presentError('Please Enter Grade of steel				')
-      }else if(this.gradeOfSteel === null){
-        this.toastSer.presentError('Please Enter Grade of steel		')
-      }else if(this.gradeOfSteel === ''){
-        this.toastSer.presentError('Please Enter Grade of steel		')
       }
       else if(this.stageOfwork === undefined){
         this.toastSer.presentError('Please Enter Stage of work		')
@@ -527,7 +520,14 @@ this.setViews();
         this.toastSer.presentError('Please Enter Stage of work		')
       }else if(this.stageOfwork === ''){
         this.toastSer.presentError('Please Enter Stage of work		')
-      }else if(this.weight1 === undefined){
+      }else if(this.gradeOfSteel === undefined){
+        this.toastSer.presentError('Please Enter Grade of steel				')
+      }else if(this.gradeOfSteel === null){
+        this.toastSer.presentError('Please Enter Grade of steel		')
+      }else if(this.gradeOfSteel === ''){
+        this.toastSer.presentError('Please Enter Grade of steel		')
+      }
+      else if(this.weight1 === undefined){
         this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 1	')
       }else if(this.weight1 === null){
         this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 1	')
@@ -647,7 +647,7 @@ this.setViews();
           if(window.navigator.connection.type === 'none'){
             this.toastSer.presentError('Please check your internet connection');
          }else{
-          this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.date3,this.gradeOfSteel,this.stageOfwork,
+          this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.dates,this.gradeOfSteel,this.stageOfwork,
             395,617,888,1580,2470,this.weight1,this.weight2,this.weight3,this.weight4,this.weight5,
             this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.observation1,this.observation2,this.observation3,this.observation4,this.observation5,
             this.waterMarkImage.nativeElement.src,
@@ -665,7 +665,7 @@ this.setViews();
           }
 
         }else{
-          this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.date3,this.gradeOfSteel,this.stageOfwork,
+          this.httpSer.addSteelUnitWtTest(Constants.workId,Constants.empid,this.dates,this.gradeOfSteel,this.stageOfwork,
             395,617,888,1580,2470,this.weight1,this.weight2,this.weight3,this.weight4,this.weight5,
             this.diff1,this.diff2,this.diff3,this.diff4,this.diff5,this.observation1,this.observation2,this.observation3,this.observation4,this.observation5,
             this.waterMarkImage.nativeElement.src,

@@ -419,18 +419,19 @@ this.setViews();
         this.toastSer.presentError('Please Enter Date of testing	')
       }else if(this.date2 === ''){
         this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.gradeofConcrete === undefined){
-        this.toastSer.presentError('Please Enter Grade of Concrete				')
-      }else if(this.gradeofConcrete === null){
-        this.toastSer.presentError('Please Enter Grade of Concrete				')
-      }else if(this.gradeofConcrete === ''){
-        this.toastSer.presentError('Please Enter Grade of Concrete				')
       }else if(this.stageOfwork === undefined){
         this.toastSer.presentError('Please Enter Stage of work		')
       }else if(this.stageOfwork === null){
         this.toastSer.presentError('Please Enter Stage of work		')
       }else if(this.stageOfwork === ''){
         this.toastSer.presentError('Please Enter Stage of work		')
+      }
+      else if(this.gradeofConcrete === undefined){
+        this.toastSer.presentError('Please Enter Grade of Concrete				')
+      }else if(this.gradeofConcrete === null){
+        this.toastSer.presentError('Please Enter Grade of Concrete				')
+      }else if(this.gradeofConcrete === ''){
+        this.toastSer.presentError('Please Enter Grade of Concrete				')
       }
       else if(this.heightOfSubsided === undefined){
         this.toastSer.presentError('Please Enter Height of the subsided concrete		')

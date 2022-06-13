@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/formselection"></ion-back-button>
     </ion-buttons>
-    <ion-title style="white-space: pre-wrap !important;">Compressive Strength of Cubes (07 days)</ion-title>
+    <ion-label style="white-space: pre-wrap !important;">Compressive Strength of Cubes (07 days)</ion-label>
 
 
   </ion-toolbar>
@@ -138,7 +138,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number" [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()"></ion-input>
+            <ion-input type="number" [(ngModel)]="gradeOfConcrete" (ionChange)="gradeListioners()" placeholder="grade"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -165,7 +165,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text"  [(ngModel)]="stagework"></ion-input>
+            <ion-input type="text"  [(ngModel)]="stagework" placeholder="Stage of work"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -178,7 +178,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="number"  [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" ></ion-input>
+            <ion-input type="number"  [(ngModel)]="quantityOfConcrete" (ionChange)="quantityListioner()" placeholder="Quantity"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -198,39 +198,15 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="2">
+        <ion-col size="12">
           <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;"><strong>Sno</strong></ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col size="5">
-          <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;"><strong>Date of Casting		</strong></ion-label>
-          </ion-item>
-
-        </ion-col>
-        <ion-col size="5">
-          <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;"><strong>Date of Testing			</strong></ion-label>
-          </ion-item>
-
-        </ion-col>
-
-      </ion-row>
-
-
-      <ion-row>
-        <ion-col size="2">
-          <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;">1</ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
+            <ion-label> <strong>Date of Casting1</strong> </ion-label>
+</ion-item>
+<ion-item class="input">
 
             <ion-input value="{{ castdate1 | date: 'dd-MM-yyyy' }}" id="castdate1" >
             </ion-input>
-            <ion-popover trigger="castdate1" size="cover">
+            <ion-popover trigger="castdate1" size="cover" [dismissOnSelect]="true" >
               <ng-template>
                 <ion-datetime presentation="datecast" [(ngModel)]="castdate1"  (ngModelChange)="datesListioners()"></ion-datetime>
               </ng-template>
@@ -238,32 +214,36 @@
           </ion-item>
 
         </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
-            <ion-label>{{casttest1}}</ion-label>
 
 
-
-          </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="padding"> <strong>Date of Testing1</strong> </ion-label>
 
         </ion-col>
+        <ion-col size="6">
+            <ion-item class="input">
+             <ion-label>{{casttest1}}</ion-label>
 
+            </ion-item>
+
+          </ion-col>
       </ion-row>
 
 
 
       <ion-row>
-        <ion-col size="2">
+        <ion-col size="12">
           <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;">2</ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
+
+            <ion-label > <strong>Date of Casting2</strong> </ion-label>
+</ion-item>
+<ion-item class="input">
 
             <ion-input value="{{ castdate2 | date: 'dd-MM-yyyy' }}" id="castdate2" >
             </ion-input>
-            <ion-popover trigger="castdate2" size="cover">
+            <ion-popover trigger="castdate2" size="cover" [dismissOnSelect]="true">
               <ng-template>
                 <ion-datetime presentation="datecast2" [(ngModel)]="castdate2" (ngModelChange)="datesListioners()"></ion-datetime>
               </ng-template>
@@ -271,45 +251,58 @@
           </ion-item>
 
         </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
 
-            <ion-label>{{casttest2}}</ion-label>
-          </ion-item>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="padding"> <strong>Date of Testing2</strong> </ion-label>
 
         </ion-col>
+        <ion-col size="6">
+            <ion-item class="input">
+             <ion-label>{{casttest2}}</ion-label>
 
+            </ion-item>
+
+          </ion-col>
       </ion-row>
 
 
       <ion-row>
-        <ion-col size="2">
+        <ion-col size="12">
           <ion-item class="padding">
-            <ion-label style="white-space: pre-wrap !important;">3</ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
+            <ion-label> <strong>Date of Casting3</strong> </ion-label>
+</ion-item>
+<ion-item class="input">
 
             <ion-input value="{{ castdate3 | date: 'dd-MM-yyyy' }}" id="castdate3" >
             </ion-input>
-            <ion-popover trigger="castdate3" size="cover">
+            <ion-popover trigger="castdate3" size="cover" [dismissOnSelect]="true">
               <ng-template>
-                <ion-datetime presentation="datecast3" [(ngModel)]="castdate3" (ionChange)="datesListioners()"></ion-datetime>
+                <ion-datetime presentation="datecast3" [(ngModel)]="castdate3" (ngModelChange)="datesListioners()"></ion-datetime>
               </ng-template>
             </ion-popover>
           </ion-item>
 
         </ion-col>
-        <ion-col size="5">
-          <ion-item class="input">
 
-            <ion-label>{{casttest3}}</ion-label>
 
-          </ion-item>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="padding"> <strong>Date of Testing3</strong> </ion-label>
 
         </ion-col>
+        <ion-col size="6">
+            <ion-item class="input">
+             <ion-label>{{casttest3}}</ion-label>
 
+            </ion-item>
+
+          </ion-col>
       </ion-row>
 
 
@@ -352,7 +345,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="weight1" (ionChange)="weightListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="weight1" (ionChange)="weightListioners()" placeholder="cube1"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -374,7 +367,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="weight2" (ionChange)="weightListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="weight2" (ionChange)="weightListioners()" placeholder="cube2"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -396,7 +389,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="weight3" (ionChange)="weightListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="weight3" (ionChange)="weightListioners()" placeholder="cube3"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -442,7 +435,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="load1" (ionChange)="loadListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="load1" (ionChange)="loadListioners()" placeholder="load1"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -464,7 +457,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="load2" (ionChange)="loadListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="load2" (ionChange)="loadListioners()" placeholder="load2"></ion-input>
           </ion-item>
 
         </ion-col>
@@ -486,7 +479,7 @@
         </ion-col>
         <ion-col size="5">
           <ion-item class="input">
-             <ion-input type="number" [(ngModel)]="load3" (ionChange)="loadListioners()"></ion-input>
+             <ion-input type="number" [(ngModel)]="load3" (ionChange)="loadListioners()" placeholder="load3"></ion-input>
           </ion-item>
 
         </ion-col>

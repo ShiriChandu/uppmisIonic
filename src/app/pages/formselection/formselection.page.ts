@@ -21,6 +21,7 @@ export class FormselectionPage implements OnInit {
 
   ionViewDidEnter(){
     this.worklist = Constants.schemedetailsList;
+    this.clearfields();
 
   }
 
@@ -44,7 +45,11 @@ export class FormselectionPage implements OnInit {
   formchange($event){
     this.form = $event.target.value;
     console.log('form: ',$event.target.value);
-      }
+   }
+   clearfields(){
+     this.workid = null;
+     this.form = null;
+   }
 
 
   onClick(){

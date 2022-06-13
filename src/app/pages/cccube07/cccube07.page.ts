@@ -517,7 +517,9 @@ this.setViews();
       h12 !== undefined && h12 !== '' && h12 !== null &&
       h13 !== undefined && h13 !== '' && h13 !== null){
 
-        j11 = (h11+h12+h12)/3;
+        var sum =h11+h12+h13;
+        j11 = (sum)/3
+
         if(j11 !== NaN){
           this.avgStrength = j11;
           if(j11 >=25){
@@ -602,13 +604,18 @@ this.setViews();
     }
 
     submit(){
-      if(this.date3 === undefined){
-        this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === null){
-        this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.date3 === ''){
-        this.toastSer.presentError('Please Enter Date of testing	')
-      }else if(this.gradeOfConcrete === undefined){
+      if(this.department === undefined){
+        this.toastSer.presentError('Please Select Department	')
+
+      }else if(this.department === null){
+        this.toastSer.presentError('Please Select Department	')
+
+      }else if(this.department === ''){
+        this.toastSer.presentError('Please Select Department	')
+
+      }
+
+    else if(this.gradeOfConcrete === undefined){
         this.toastSer.presentError('Please Enter Grade of Concrete				')
       }else if(this.gradeOfConcrete === null){
         this.toastSer.presentError('Please Enter Grade of Concrete				')
@@ -626,7 +633,14 @@ this.setViews();
         this.toastSer.presentError('Please Enter Quantity of concrete laid in m		')
       }else if(this.quantityOfConcrete === null){
         this.toastSer.presentError('Please Enter Quantity of concrete laid in m		')
-      }else if(this.castdate1 === undefined){
+      }else if(this.noofsamples === undefined){
+        this.toastSer.presentError('Please Enter Number of Samples		')
+      }else if(this.noofsamples === ''){
+        this.toastSer.presentError('Please Enter Number of Samples		')
+      }else if(this.noofsamples === null){
+        this.toastSer.presentError('Please Enter Number of Samples		')
+      }
+      else if(this.castdate1 === undefined){
         this.toastSer.presentError('Please Enter Date of Casting 1	')
       }else if(this.castdate1 === ''){
         this.toastSer.presentError('Please Enter Date of Casting 1	')
