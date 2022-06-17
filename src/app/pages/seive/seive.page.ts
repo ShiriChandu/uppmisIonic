@@ -574,11 +574,12 @@ let f19;
             this.remarks = 'The Tested sample Fine aggregate comes under Zone-1 as per Table-9 Clause 6.3 of IS 383-2016';
           }else if(f16<59.5){
             this.remarks ='The Tested sampleFine aggregate comes under Zone-2 as per Table-9 Clause 6.3 of IS 383-2016';
-          }else if(f17<79.5){}
+          }else if(f17<79.5){
           this.remarks ='The Tested sample Fine aggregate comes under Zone-3 as per Table-9 Clause 6.3 of IS 383-2016';
           }else {
             this.remarks = 'The Tested sample Fine aggregate comes under Zone-4 as per Table-9 Clause 6.3 of IS 383-2016';
           }
+        }
       }
 
 

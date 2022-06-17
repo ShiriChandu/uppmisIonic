@@ -524,7 +524,7 @@ this.setViews();
 
       if(this.paasing3 !== undefined && this.paasing3 !== '' && this.paasing3 !== null){
         if(e15 !== NaN){
-         if(e15 >= 25 && e15 <=55){
+         if(e15 >= 40 && e15 <=85){
            j15 = 1;
          }else{
            j15 = -1;
@@ -549,7 +549,7 @@ this.setViews();
         if(c16 !== NaN){
           d16 = (c16/i10)*100;
           this.retainwt4 = d16;
-          e16 =((i10-c13)/i10)*100;
+          e16 =((i10-c16)/i10)*100;
 
           this.paasing4 = e16;
 

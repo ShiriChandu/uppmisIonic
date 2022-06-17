@@ -57,9 +57,9 @@ export class FormselectionPage implements OnInit {
   }
 
   move(){
-    if(this.workid === undefined){
+    if(this.workid === undefined || this.workid === null || this.workid === ''){
       this.toastSer.presentError('Please select work');
-    }else if(this.form === undefined){
+    }else if(this.form === undefined || this.form === null || this.form === ''){
       this.toastSer.presentError('Please select Form');
     }else{
       if(this.form === 'Slit Content'){
@@ -70,13 +70,13 @@ export class FormselectionPage implements OnInit {
         this.router.navigate(['cccube28']);
       }else if(this.form === 'Seive analysis-concrete'){
         this.router.navigate(['seive']);
-      }else if(this.form === 'Coarse Aggrigate - Single size'){
+      }else if(this.form === 'Coarse Aggregate - Single size'){
         this.router.navigate(['coarsesingle']);
-      }else if(this.form === 'Coarse Aggrigate - Graded(40mm)'){
+      }else if(this.form === 'Coarse Aggregate - Graded(40mm)'){
         this.router.navigate(['ca40']);
-      }else if(this.form === 'Coarse Aggrigate - Graded(20mm)'){
+      }else if(this.form === 'Coarse Aggregate - Graded(20mm)'){
         this.router.navigate(['ca20']);
-      }else if(this.form === 'Coarse Aggrigate - Graded(12.5mm)'){
+      }else if(this.form === 'Coarse Aggregate - Graded(12.5mm)'){
         this.router.navigate(['ca12']);
       }else if(this.form === 'Steel Unit Weight test'){
         this.router.navigate(['steelunit']);

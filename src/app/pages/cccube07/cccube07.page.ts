@@ -760,7 +760,7 @@ this.setViews();
             this.toastSer.presentError('Please check your internet connection');
          }else{
             this.httpSer.addCC_Cube_7Test(Constants.workId,Constants.empid,this.department,this.quantityOfConcrete,
-              this.gradeOfConcrete,this.stagework,
+              this.gradeOfConcrete,this.stagework,this.noofsamples,
               this.castdate1,this.casttest11,this.age1,this.density1,this.load1,this.strength1,this.avgStrength,this.charstr1,this.smplacce1,this.smplacce11,
               this.castdate2,this.casttest22,this.age2,this.density2,this.load2,this.strength2,this.charstr2,this.smplacce2,this.smplacce22,
               this.castdate3,this.casttest33,this.age3,this.density3,this.load3,this.strength3,this.charstr3,this.smplacce3,this.smplacce33,
@@ -782,7 +782,7 @@ this.setViews();
 
         }else{
           this.httpSer.addCC_Cube_7Test(Constants.workId,Constants.empid,this.department,this.quantityOfConcrete,
-            this.gradeOfConcrete,this.stagework,
+            this.gradeOfConcrete,this.stagework,this.noofsamples,
             this.castdate1,this.casttest11,this.age1,this.density1,this.load1,this.strength1,this.avgStrength,this.charstr1,this.smplacce1,this.smplacce11,
             this.castdate2,this.casttest22,this.age2,this.density2,this.load2,this.strength2,this.charstr2,this.smplacce2,this.smplacce22,
             this.castdate3,this.casttest33,this.age3,this.density3,this.load3,this.strength3,this.charstr3,this.smplacce3,this.smplacce33,

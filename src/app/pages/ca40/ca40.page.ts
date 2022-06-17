@@ -462,10 +462,15 @@ this.setViews();
       if(this.paasing1 !== undefined && this.paasing1 !== '' && this.paasing1 !== null){
         if(e13 !== NaN){
          if(e13 === 100){
+          console.log('ifff','s');
+
            j13 = 1;
          }else{
+          console.log('else','s');
+
            j13 = -1;
          }
+         console.log('j13',j13);
         }
       }
 
@@ -497,10 +502,16 @@ this.setViews();
       if(this.paasing2 !== undefined && this.paasing2 !== '' && this.paasing2 !== null){
         if(e14 !== NaN){
          if(e14 <= 100){
+          console.log('ifff','s');
+
            j14 = 1;
          }else{
+          console.log('else','s');
+
            j14 = -1;
          }
+         console.log('j14',j14);
+
         }
       }
 
@@ -532,10 +543,16 @@ this.setViews();
       if(this.paasing3 !== undefined && this.paasing3 !== '' && this.paasing3 !== null){
         if(e15 !== NaN){
          if(e15 <= 70 && e15 > 30){
+          console.log('ifff','s');
+
            j15 = 1;
          }else{
            j15 = -1;
+           console.log('else','s');
+
          }
+         console.log('j15',j15);
+
         }
       }
 
@@ -567,10 +584,16 @@ this.setViews();
       if(this.paasing4 !== undefined && this.paasing4 !== '' && this.paasing4 !== null){
         if(e16 !== NaN){
          if(e16 <= 35 && e16 > 10){
+          console.log('ifff','s');
+
            j16 = 1;
          }else{
+          console.log('ifff','s');
+
            j16 = -1;
          }
+         console.log('j16',j16);
+
         }
       }
 
@@ -600,11 +623,17 @@ this.setViews();
 
       if(this.paasing5 !== undefined && this.paasing5 !== '' && this.paasing5 !== null){
         if(e17 !== NaN){
-         if(e17 >=0 && e16 <=10){
+         if(e17 >=0 && e17 <=10){
            j17 = 1;
+           console.log('ifff','s');
+
          }else{
            j17 = -1;
+           console.log('else','s');
+
          }
+         console.log('ifff',j17);
+
         }
       }
 

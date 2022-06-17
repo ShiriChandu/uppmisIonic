@@ -10,7 +10,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content overflow-scroll=”true”>
   <ion-list>
     <ion-grid fixed>
       <ion-row>
@@ -116,7 +116,7 @@
 
             <ion-input value="{{ date2 | date: 'dd-MM-yyyy' }}" id="date2" >
             </ion-input>
-            <ion-popover trigger="date2" size="cover" [dismissOnSelect]="true">
+            <ion-popover trigger="date2" size="cover" [dismissOnSelect]="true" >
               <ng-template>
                 <ion-datetime presentation="dat" [(ngModel)]="date2"></ion-datetime>
               </ng-template>
@@ -134,7 +134,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="stageOfwork" placeholder="Stage of work"></ion-input>
+            <ion-input type="text"  [(ngModel)]="stageOfwork" placeholder="Stage of work"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -147,7 +147,7 @@
         </ion-col>
         <ion-col size="6">
           <ion-item class="input">
-            <ion-input type="text" cass="input" [(ngModel)]="gradeofConcrete" placeholder="Grade"></ion-input>
+            <ion-input type="number"  [(ngModel)]="gradeofConcrete" placeholder="Grade"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

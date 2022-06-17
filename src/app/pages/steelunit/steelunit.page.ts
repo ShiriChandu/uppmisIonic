@@ -528,42 +528,42 @@ this.setViews();
         this.toastSer.presentError('Please Enter Grade of steel		')
       }
       else if(this.weight1 === undefined){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 1	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 1	')
       }else if(this.weight1 === null){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 1	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 1	')
       }else if(this.weight1 === ''){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 1	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 1	')
       }
       else if(this.weight2 === undefined){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 2	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 2	')
       }else if(this.weight2 === null){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 2	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 2	')
       }else if(this.weight2 === ''){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 2	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 2	')
       }
 
       else if(this.weight3 === undefined){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 3	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 3	')
       }else if(this.weight3 === null){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 3	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 3	')
       }else if(this.weight3 === ''){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 3	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 3	')
       }
 
       else if(this.weight4 === undefined){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 4	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 4	')
       }else if(this.weight4 === null){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 4	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 4	')
       }else if(this.weight4 === ''){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 4	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 4	')
       }
 
       else if(this.weight5 === undefined){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 5	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 5	')
       }else if(this.weight5 === null){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 5	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 5	')
       }else if(this.weight5 === ''){
-        this.toastSer.presentError('Please Enter Standard Weight of Steel per Rmt in grms		 5	')
+        this.toastSer.presentError('Please Enter Actual Weight in grms			 5	')
       }
       else if(this.remarks1 === undefined){
         this.toastSer.presentError('Please Enter Remarks 1')

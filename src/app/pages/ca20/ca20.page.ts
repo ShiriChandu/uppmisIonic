@@ -526,7 +526,7 @@ this.setViews();
 
       if(this.paasing3 !== undefined && this.paasing3 !== '' && this.paasing3 !== null){
         if(e15 !== NaN){
-         if(e15 >= 40 && e15 <=85){
+         if(e15 >= 25 && e15 <=55){
            j15 = 1;
          }else{
            j15 = -1;
