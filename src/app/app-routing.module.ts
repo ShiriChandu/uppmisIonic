@@ -67,6 +67,10 @@ const routes: Routes = [
     path: 'cccube07',
     loadChildren: () => import('./pages/cccube07/cccube07.module').then( m => m.Cccube07PageModule)
   },
+  {
+    path: 'attendance',
+    loadChildren: () => import('./pages/attendance/attendance.module').then( m => m.AttendancePageModule)
+  },
 ];
 
 @NgModule({

@@ -82,5 +82,9 @@ export class DashboardPage implements OnInit {
 
 
   }
+  moveToattendance(){
+    this.router.navigate(['attendance']);
+
+  }
 
 }
