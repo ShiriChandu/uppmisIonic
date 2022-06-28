@@ -1,9 +1,120 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>attendance</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-label style="white-space: pre-wrap !important;">Employee Attendance</ion-label>
+
+
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+  <ion-list>
+    <ion-grid fixed>
+
+      <ion-row *ngIf="isam">
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label> <strong>{{loginTime}}	</strong>  </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{loginText}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="ispm">
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label> <strong>{{logoutTime}}	</strong>  </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-label>{{logoutText}}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row *ngIf="isType">
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label> <strong>Type	</strong>  </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item class="input">
+            <ion-select  interface = "popover" placeholder="Select " (ionChange)="typeChange($event)">
+              <ion-select-option value="Site">Site</ion-select-option>
+              <ion-select-option value="Office">Office</ion-select-option>
+              <ion-select-option value="Leave" *ngIf="isdepend">Leave</ion-select-option>
+
+            </ion-select>
+
+            </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row *ngIf="isphoto">
+        <ion-col size="6">
+          <ion-item class="padding">
+            <ion-label  style="white-space: pre-wrap !important;"><strong>  Upload Photo</strong></ion-label>
+          </ion-item>
+
+        </ion-col>
+
+        <ion-col size="4">
+
+
+
+          <img id="multiple" #previewimage>
+
+
+
+
+        </ion-col>
+
+        <ion-col size="2">
+
+          <ion-button title="camera" (click)="locationcheck()">
+            <ion-icon  name="camera" ></ion-icon>
+            </ion-button>
+        </ion-col>
+
+
+      </ion-row>
+
+
+      <ion-row *ngIf="btnLayout">
+        <ion-col size="6">
+          <ion-button style="text-transform: none;" (click)="submit()" expand="block" >Submit            </ion-button>
+        </ion-col>
+
+            <ion-col size="6">
+          <ion-button style="text-transform: none;" (click)="cancel()" expand="block" >Cancel            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="btnLayout2">
+          <ion-col size="6">
+            <ion-button style="text-transform: none;" (click)="submit1()" expand="block" >Submit            </ion-button>
+          </ion-col>
+
+              <ion-col size="6">
+            <ion-button style="text-transform: none;" (click)="cancel1()" expand="block" >Cancel            </ion-button>
+            </ion-col>
+          </ion-row>
+
+
+
+      </ion-grid>
+      </ion-list>
+
 
 </ion-content>

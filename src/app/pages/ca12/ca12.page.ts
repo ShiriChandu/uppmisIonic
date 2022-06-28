@@ -136,7 +136,7 @@ this.setViews();
 
   }
 
-  getLatLong() {
+    getLatLong() {
     console.log('Easting,northing');
     this.loadingLocation = true;
 

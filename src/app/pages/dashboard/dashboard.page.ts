@@ -83,8 +83,43 @@ export class DashboardPage implements OnInit {
 
   }
   moveToattendance(){
-    this.router.navigate(['attendance']);
+ this.serviceCall(Constants.loginUserName,Constants.loginPassword);
+
 
   }
+  moveTodetails(){
+    this.router.navigate(['employeedetails']);
+
+  }
+
+  serviceCall(userid: any, password: any){
+    this.httpser.logionService(userid,password,'employee','ionic').subscribe((response: any)=>{
+       if(response.error === false){
+           console.log('response',response.data);
+           Constants.empid = response.data.emp_id;
+           Constants.empName = response.data.emp_name;
+           Constants.projectId = response.data.project_id;
+           Constants.projectCode = response.data.project_code;
+           Constants.clusterId = response.data.cluster_id;
+           Constants.clusterName = response.data.cluster_name;
+           Constants.distName = response.data.dist_name;
+           Constants.contactNo = response.data.contact_number;
+           Constants.emailId = response.data.emailid;
+           Constants.orgName = response.data.organization_name;
+           Constants.designation = response.data.designation;
+           Constants.empCode = response.data.emp_code;
+           Constants.logintime = response.data.log_in_time;
+           Constants.logoutTime = response.data.log_out_time;
+           Constants.amtype = response.data.am_type;
+           Constants.pmtype = response.data.pm_type;
+           this.router.navigate(['attendance']);
+
+      }else{
+        this.toastSer.presentError(response.msg);
+
+       }
+    });
+ }
+
 
 }

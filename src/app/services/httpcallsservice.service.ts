@@ -308,5 +308,32 @@ export class HttpcallsserviceService {
     );
   }
 
+  epmAttendance(empid: any,deviceid: any,amphoto: any,amtype: any,lat: any,longi: any){
+
+    const parameters = {emp_id: empid,device_id: deviceid,am_photo: amphoto,am_type: amtype,am_lat: lat,am_lng: longi};
+    console.log('JSON', JSON.stringify(parameters));
+
+    return this.httpClient.post(
+      `${environment.apiUrl}/emp_attendance`,
+      JSON.stringify(parameters)
+    );
+
+  }
+
+  epmAttendancePM(empid: any,deviceid: any,pmphoto: any,comptracktime: any,
+    amtype: any,lat: any,longi: any,trackinfo: any){
+
+    const parameters = {emp_id: empid,device_id: deviceid,pm_photo: pmphoto,
+      comp_track_time: comptracktime,
+      pm_type: amtype,pm_lat: lat,pm_lng: longi,comp_track_info: trackinfo};
+    console.log('JSON', JSON.stringify(parameters));
+
+    return this.httpClient.post(
+      `${environment.apiUrl}/emp_attendance`,
+      JSON.stringify(parameters)
+    );
+
+  }
+
 
 }
